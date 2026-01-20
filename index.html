@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RU ⇄ DE переводчик</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <div class="title">
+          <h1>RU ⇄ DE переводчик</h1>
+          <div class="sub">DeepL через Google Apps Script • пароль обязателен</div>
+        </div>
+
+        <div class="actions">
+          <div class="pill">Направление: <b id="dirText">RU → DE</b></div>
+          <button class="btn" id="swapBtn" type="button">Поменять ⇄</button>
+          <button class="btn" id="clearBtn" type="button">Очистить</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- LEFT -->
+        <div class="panel">
+          <label for="password">Пароль</label>
+          <input id="password" type="password" placeholder="Введи пароль" autocomplete="current-password" />
+
+          <div style="margin-top:12px">
+            <label for="text">Текст</label>
+            <textarea id="text" placeholder="Введи слово или фразу..."></textarea>
+          </div>
+
+          <div class="row" style="margin-top:12px">
+            <button class="btn primary" id="goBtn" type="button">Перевести</button>
+            <button class="btn" id="copyBtn" type="button">Копировать перевод</button>
+          </div>
+
+          <div class="status" id="status"></div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="panel" id="resultPanel" style="display:none">
+          <div class="resultTitle">
+            <p class="big" id="translatedWord">—</p>
+            <span class="badge" id="wordBadge">слово</span>
+          </div>
+
+          <div class="kv">
+            <div class="k">Артикль</div>
+            <div class="v" id="article">—</div>
+
+            <div class="k">Мн. число</div>
+            <div class="v" id="plural">—</div>
+
+            <div class="k">Объяснение</div>
+            <div class="v" id="explainRu">—</div>
+
+            <div class="k">Пример (DE)</div>
+            <div class="v" id="exDe">—</div>
+
+            <div class="k">Пример (RU)</div>
+            <div class="v" id="exRu">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Сделано для личного изучения немецкого.
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
